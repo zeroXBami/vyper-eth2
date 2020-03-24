@@ -1,0 +1,44 @@
+{
+  "name": "vyper-eth2",
+  "version": "1.0.1",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "gen-bytecode": "vyper scontracts/StakingContract.vy > artifacts/staking.bytecode",
+    "gen-abi": "vyper scontracts/StakingContract.vy -f abi > artifacts/staking.abi",
+    "compile": "npm run gen-bytecode && npm run gen-abi",
+    "test": "npm run compile && truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stakewithus/vyper-eth2.git"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.3",
+    "@chainsafe/bls": "^0.2.0",
+    "@chainsafe/eth2.0-types": "^0.1.1",
+    "@chainsafe/ssz": "^0.5.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.17.0",
+    "babel-register": "^6.23.0",
+    "fs-extra": "^8.1.0"
+  },
+  "author": "Hoang Quan Tran",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@openzeppelin/test-helpers": "^0.5.4",
+    "prettier": "^1.19.1"
+  },
+  "bugs": {
+    "url": "https://github.com/stakewithus/vyper-eth2/issues"
+  },
+  "homepage": "https://github.com/stakewithus/vyper-eth2#readme"
+}
